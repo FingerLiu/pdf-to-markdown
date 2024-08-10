@@ -1,0 +1,5 @@
+.env
+test_azure.py
+.git
+demo.pdf
+k8s-manifests

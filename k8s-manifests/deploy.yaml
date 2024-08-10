@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdf-parse-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pdf-parse-service
+  template:
+    metadata:
+      labels:
+        app: pdf-parse-service
+    spec:
+      containers:
+      - name: app
+        image: your-registry/pdf-parse-service:latest
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: pdf-parse-service-config
+        resources:
+          requests:
+            cpu: 2
+            memory: 4Gi
+          limits:
+            cpu: 4
+            memory: 8Gi
+

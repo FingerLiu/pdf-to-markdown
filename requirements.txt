@@ -1,0 +1,7 @@
+gptpdf
+requests
+fastapi
+uvicorn
+python-dotenv
+pydantic
+aiofiles
